@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>AR Custom Patt - My Animal</title>
+    <title>AR Koenigsegg - Marker Test</title>
 
     <!-- کتابخانه A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
@@ -20,19 +20,21 @@
         renderer="logarithmicDepthBuffer: true;"
     >
 
-        <!-- 
-            استفاده از فایل patt سفارشی.
-            - type="pattern": یعنی از فایل patt استفاده می‌کنیم (نه preset).
-            - url="./marker/HIRO.patt": مسیر دقیق فایل شما.
-        -->
+        <!-- استفاده از فایل patt سفارشی Hiro -->
         <a-marker 
             type="pattern" 
             url="./marker/HIRO.patt"
         >
 
-            <!-- مدل حیوان شما -->
+            <!-- 
+                مدل ماشین Koenigsegg:
+                - مسیر: ./models/koenigsegg.glb (اگر جای دیگری است، اصلاح کنید).
+                - position="0 0 0.1": کمی از سطح نشانگر فاصله دارد.
+                - scale="0.5 0.5 0.5": اندازه مدل (در صورت نیاز کم/زیاد کنید).
+                - rotation="0 180 0": جهت مدل رو به شما.
+            -->
             <a-entity
-                gltf-model="./models/animal.glb"
+                gltf-model="./models/koenigsegg.glb"
                 position="0 0 0.1"
                 scale="0.5 0.5 0.5"
                 rotation="0 180 0">
