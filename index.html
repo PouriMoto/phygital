@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>AR Hiro Test</title>
+    <title>AR Hiro - My Animal</title>
 
     <!-- کتابخانه A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
@@ -20,18 +20,21 @@
         renderer="logarithmicDepthBuffer: true;"
     >
 
-        <!-- 
-            استفاده از نشانگر پیش‌فرض Hiro.
-            دیگر نیازی به فایل .patt و پارامتر size نیست.
-        -->
+        <!-- نشانگر پیش‌فرض Hiro -->
         <a-marker preset="hiro">
 
-            <!-- مدل اردک آنلاین برای تست -->
+            <!-- 
+                مدل حیوان شما:
+                - مسیر gltf-model را با نام فایل خودتان تطبیق دهید.
+                - position="0 0 0.1": مدل ۱۰ سانتی‌متر از مانیتور فاصله دارد.
+                - rotation="0 180 0": مدل رو به شما چرخیده است.
+                - scale="0.5 0.5 0.5": در صورت نیاز، اندازه را کم یا زیاد کنید.
+            -->
             <a-entity
-                gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
-                position="0 0 0"
+                gltf-model="./models/koenigsegg.glb"
+                position="0 0 0.1"
                 scale="0.5 0.5 0.5"
-                rotation="0 0 0">
+                rotation="0 180 0">
             </a-entity>
 
         </a-marker>
