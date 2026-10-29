@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>AR Hiro - My Animal</title>
+    <title>AR Custom Patt - My Animal</title>
 
     <!-- کتابخانه A-Frame -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
@@ -20,18 +20,19 @@
         renderer="logarithmicDepthBuffer: true;"
     >
 
-        <!-- نشانگر پیش‌فرض Hiro -->
-        <a-marker preset="hiro">
+        <!-- 
+            استفاده از فایل patt سفارشی.
+            - type="pattern": یعنی از فایل patt استفاده می‌کنیم (نه preset).
+            - url="./marker/HIRO.patt": مسیر دقیق فایل شما.
+        -->
+        <a-marker 
+            type="pattern" 
+            url="./marker/HIRO.patt"
+        >
 
-            <!-- 
-                مدل حیوان شما:
-                - مسیر gltf-model را با نام فایل خودتان تطبیق دهید.
-                - position="0 0 0.1": مدل ۱۰ سانتی‌متر از مانیتور فاصله دارد.
-                - rotation="0 180 0": مدل رو به شما چرخیده است.
-                - scale="0.5 0.5 0.5": در صورت نیاز، اندازه را کم یا زیاد کنید.
-            -->
+            <!-- مدل حیوان شما -->
             <a-entity
-                gltf-model="./models/koenigsegg.glb"
+                gltf-model="./models/animal.glb"
                 position="0 0 0.1"
                 scale="0.5 0.5 0.5"
                 rotation="0 180 0">
