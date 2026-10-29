@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
-    <title>AR Marker Project</title>
+    <title>AR Phygital Project</title>
 
     <!-- ۱. کتابخانه A-Frame (موتور سه‌بعدی) -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
@@ -13,6 +13,7 @@
 </head>
 <body style="margin: 0; overflow: hidden;">
 
+    <!-- صحنه اصلی AR -->
     <a-scene
         vr-mode-ui="enabled: false"
         embedded
@@ -22,14 +23,12 @@
 
         <!-- 
             نشانگر (Marker):
-            - type="pattern": یعنی از فایل patt سفارشی استفاده می‌کنیم.
-            - url: مسیر فایل patt (همانطور که در گام ۲ توضیح دادم).
-            - size: اندازه واقعی نشانگر روی کاغذ (به متر). این پارامتر بسیار مهم است!
-            - smooth: برای کاهش لرزش مدل.
+            - url: نام فایل patt شما (بدون پسوند .patt در اینجا نوشته نمی‌شود، فقط نام فایل)
+            - size: اندازه واقعی نشانگر روی کاغذ به متر (۰.۱۵ یعنی ۱۵ سانتی‌متر)
         -->
         <a-marker 
             type="pattern" 
-            url="./markers/my-marker.patt"
+            url="./my-marker.patt"
             size="0.15"
             smooth="true"
             smoothCount="10"
@@ -39,13 +38,11 @@
 
             <!-- 
                 مدل حیوان:
-                - position: موقعیت مدل نسبت به مرکز نشانگر. 
-                  (0 0 0) یعنی دقیقاً روی نشانگر. اگر می‌خواهید کمی بالاتر باشد، Y را زیاد کنید (مثلاً 0 0.1 0).
-                - scale: اندازه مدل. اگر مدل شما خیلی بزرگ/کوچک است، این عدد را تغییر دهید.
-                - rotation: چرخش مدل.
+                فعلاً از یک مدل آنلاین (اردک) استفاده می‌کنیم تا مطمئن شویم کد کار می‌کند.
+                بعداً می‌توانید این خط را با مدل خودتان (مثلاً ./models/lion.glb) جایگزین کنید.
             -->
             <a-entity
-                gltf-model="./models/animal.glb"
+                gltf-model="https://cdn.jsdelivr.net/gh/KhronosGroup/glTF-Sample-Models@master/2.0/Duck/glTF-Binary/Duck.glb"
                 position="0 0 0"
                 scale="0.5 0.5 0.5"
                 rotation="0 0 0">
